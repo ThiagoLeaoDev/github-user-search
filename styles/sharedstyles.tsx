@@ -7,20 +7,21 @@ export const Container = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   min-height: 100vh;
 `
 export const Main = styled.main`
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   padding: 5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 `
-export const Form = styled.form`
+export const ContainerInput = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,11 +62,13 @@ export const ButtonSearch = styled.button`
     opacity: 0.85;
   }
 `
+
 export const ContainerInfos = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 2rem;
 `
 export const HeadInfos = styled.div`
   width: 100%;
@@ -87,7 +90,6 @@ export const Avatar = styled.div`
   margin-right: 1rem;
   background-color: #ccc;
 `
-
 export const UserImage = styled(Image)`
   object-position: top;
   border-radius: 50%;
@@ -124,36 +126,97 @@ export const TextNumbers = styled.p`
 export const Bold = styled.span`
   font-weight: 700;
 `
+export const ContainerRepos = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 2rem;
+`
+export const ContainerTitleRepos = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+`
+export const TitleRepos = styled.p`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.8;
+`
+export const CardRepo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  background-color: #EAEAEA;
+  padding: 24px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
 
-// export const Title = styled.h1`
-//   margin: 0;
-//   line-height: 1.15;
-//   font-size: 4rem;
-//   text-align: center;
-//   text-decoration: none;
+  &:hover {
+    opacity: 0.85;
+  }
+`
+export const CardRepoHeader = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`
+export const ContainerRepoTexts = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+export const CardRepoTitle = styled.p`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`
+export const CardRepoDescription = styled.p`
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+`
+export const CardRepoFooter = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+`
+export const CardRepoLanguage = styled.p`
+  margin: 0;
+  font-size: 0.6rem;
+  font-weight: 500;
+  opacity: 0.8;
+  color: #FFFFFF;
+  background-color: #8a8a8a;
+  padding: 0.4rem 0.5rem;
+  border-radius: 20px;
+  margin-right: 16px;
+`
+export const ContainerStars = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+`
+export const CardRepoStars = styled.p`
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-left: 8px;
+  border-radius: 20px;
+`
 
-//   a {
-//     color: ${({ theme }) => theme.colors.secondary};
-//     text-decoration: none;
-//     &:hover,
-//     :focus,
-//     :active {
-//       text-decoration: underline;
-//     }
-//   }
-// `
-
-// export const Description = styled.p`
-//   text-align: center;
-//   line-height: 1.5;
-//   font-size: 1.5rem;
-// `
-// export const CodeTag = styled.code`
-//   background: #fafafa;
-//   border-radius: 5px;
-//   margin: 0 0.75rem;
-//   padding: 0.75rem;
-//   font-size: 1.1rem;
-//   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-//     Bitstream Vera Sans Mono, Courier New, monospace;
-// `

@@ -5,6 +5,12 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["avatars.githubusercontent.com"],
+  },
+  env: {
+    GITHUB_KEY: process.env.GITHUB_KEY,
+  }
 }
 
 module.exports = nextConfig
