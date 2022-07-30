@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import Head from 'next/head'
 
 import { HiOutlineSearch, HiStar} from 'react-icons/hi'
 
-import * as SC from '../styles/sharedstyles'
+import * as SC from '../styles/mainStyle'
 import client from '../services/client';
 import { IUser, IRepo } from '../interfaces';
 
@@ -19,10 +20,15 @@ export default function Home() {
       const repos = await client.get<IRepo[]>(`/users/${search}/repos`)
       setResult(user.data)
       setRepos(repos.data)
-      console.log(repos.data)
     }
     catch (err) {
       console.log(err)
+    }
+  }
+
+  function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      getUser()
     }
   }
 
@@ -35,7 +41,7 @@ export default function Home() {
       </Head>
       <SC.Main>
         <SC.ContainerInput>
-          <SC.Input type={'text'} placeholder='Search username' value={search} onChange={e => setSearch(e.target.value)} />
+          <SC.Input type={'text'} placeholder='Search username' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={handleKeyPress} />
           <SC.ButtonSearch type='button' onClick={getUser}>
             <HiOutlineSearch size={24} color='#fff' />
           </SC.ButtonSearch>
@@ -77,7 +83,14 @@ export default function Home() {
                 </SC.ContainerTitleRepos>
                 {
                   repos.map((repo, index) => (
-                    <SC.CardRepo key={index}>
+                    <Link key={index} href={{
+                      pathname: `/${repo.name}`,
+                      query: {
+                        username: result.login,
+                        reponame: repo.name
+                      }
+                      }}>
+                    <SC.CardRepo>
                       <SC.CardRepoHeader>
                         <SC.ContainerRepoTexts>
                           <SC.CardRepoTitle>
@@ -108,6 +121,7 @@ export default function Home() {
                         }
                       </SC.CardRepoFooter>
                     </SC.CardRepo>
+                    </Link>
                   ))
                 }
               </SC.ContainerRepos>
