@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 import { HiOutlineSearch, HiStar} from 'react-icons/hi'
+import toast, {Toaster} from "react-hot-toast"
 
 import * as SC from '../styles/mainStyle'
 import client from '../services/client';
@@ -22,6 +23,7 @@ export default function Home() {
       setRepos(repos.data)
     }
     catch (err) {
+      toast.error("Usuário não encontrado")
       console.log(err)
     }
   }
@@ -36,9 +38,10 @@ export default function Home() {
     <SC.Container>
       <Head>
         <title>Github User Search</title>
-        <meta name="description" content="Search user with Github API" />
+        <meta name="description" content="Buscar usuários utilizando a api do github" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Toaster/>
       <SC.Main>
         <SC.ContainerInput>
           <SC.Input type={'text'} placeholder='Search username' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={handleKeyPress} />
@@ -66,7 +69,7 @@ export default function Home() {
                         {result?.name}
                       </SC.Name>
                       <SC.NameText>
-                        {result?.login}
+                        #{result?.login}
                       </SC.NameText>
                       <SC.NumbersInfos>
                         <SC.TextNumbers>Repositories: <SC.Bold>{result?.public_repos}</SC.Bold></SC.TextNumbers>
@@ -112,7 +115,7 @@ export default function Home() {
                         {
                           repo.stargazers_count ?
                             <SC.ContainerStars>
-                              <HiStar size={20} color='#8a8a8a' />
+                              <HiStar size={20} color='#F4A27E' />
                               <SC.CardRepoStars>
                                 {repo.stargazers_count}
                               </SC.CardRepoStars>

@@ -4,8 +4,12 @@ import GlobalStyle from '../styles/globalstyles'
 
 const theme: DefaultTheme = {
   colors: {
-    primary: '#111',
-    secondary: '#0070f3',
+    primary: '#F4A27E',
+    secondary: '#D0DFE3',
+    text: '#1F282C',
+    base: '#FFFFFF',
+    baseSecondary: '#ebedf3',
+    baseTertiary: '#DADFE2',
   },
 }
 

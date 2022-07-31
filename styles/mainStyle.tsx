@@ -33,7 +33,8 @@ export const ContainerInput = styled.div`
 export const Input = styled.input`
   width: 100%;
   padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
+  border: 2px solid ${({ theme }) => theme.colors.baseTertiary};
+  border-right: none;
   border-radius: 4px 0 0 4px;
   font-size: 1.2rem;
   &:focus {
@@ -41,16 +42,16 @@ export const Input = styled.input`
   }
 `
 export const ButtonSearch = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   border-radius: 0 4px 4px 0;
   font-size: 1.2rem;
-  background-color: #111;
-  color: #fff;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.base};
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
@@ -81,14 +82,20 @@ export const BasicInfos = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
 `
 export const Avatar = styled.div`
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 86px;
+  min-height: 86px;
   border-radius: 50%;
   margin-right: 1rem;
-  background-color: #ccc;
+  margin-bottom: 1rem;
+  background-color: ${({ theme }) => theme.colors.base};
 `
 export const UserImage = styled(Image)`
   object-position: top;
@@ -115,6 +122,7 @@ export const NumbersInfos = styled.div`
   flex-direction: row;
   align-items: flex-start;
   margin-top: 2rem;
+  flex-wrap: wrap;
 `
 export const TextNumbers = styled.p`
   margin: 0;
@@ -154,7 +162,7 @@ export const CardRepo = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 1rem;
-  background-color: #EAEAEA;
+  background-color: ${({ theme }) => theme.colors.baseSecondary};
   padding: 24px;
   border-radius: 4px;
   margin-bottom: 1rem;
@@ -162,7 +170,7 @@ export const CardRepo = styled.div`
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.8;
   }
 `
 export const CardRepoHeader = styled.div`
@@ -198,9 +206,8 @@ export const CardRepoLanguage = styled.p`
   margin: 0;
   font-size: 0.6rem;
   font-weight: 500;
-  opacity: 0.8;
-  color: #FFFFFF;
-  background-color: #8a8a8a;
+  color: ${({ theme }) => theme.colors.base};
+  background-color: ${({ theme }) => theme.colors.primary};
   padding: 0.4rem 0.5rem;
   border-radius: 20px;
   margin-right: 16px;
@@ -214,7 +221,7 @@ export const ContainerStars = styled.div`
 export const CardRepoStars = styled.p`
   margin: 0;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 700;
   opacity: 0.8;
   margin-left: 8px;
   border-radius: 20px;

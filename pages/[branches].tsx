@@ -12,7 +12,6 @@ export default function branches() {
   const router = useRouter()
   const { username, reponame } = router.query
   const [commits, setCommits] = useState<ICommit[]>([]);
-  const options = { year: "numeric", month: "long", day: "numeric" }
 
   useEffect(() => {
     const getBranches = async () => {
@@ -26,18 +25,16 @@ export default function branches() {
   async function getCommits(branch: string) {
     const resCommits = await client.get(`/repos/${username}/${reponame}/commits?sha=${branch}`)
     setCommits(resCommits.data)
-    console.log(resCommits.data)
   }
 
 
   const [branches, setBranches] = useState<IBranch[]>([])
   return (
-    <SC.Main>
-      <Head>
-        <title>Github User Search</title>
-        <meta name="description" content="Search user with Github API" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <SC.Container>
+      <SC.Main>
+        <Head>
+          <title>Github User Search|Branches</title>
+        </Head>
         <SC.ContainerTitle onClick={() => router.back()}>
           <SC.IconBack />
           <SC.BoxIconTitle>
@@ -47,9 +44,9 @@ export default function branches() {
         </SC.ContainerTitle>
         <SC.ContainerBranches>
           {branches.map((branch, index) => (
-              <SC.BranchName key={index} onClick={ ()=>  getCommits(branch.name)}>
-                {branch.name}
-              </SC.BranchName>
+            <SC.BranchName key={index} onClick={() => getCommits(branch.name)}>
+              {branch.name}
+            </SC.BranchName>
           ))}
         </SC.ContainerBranches>
         <SC.ContainerCommits>
@@ -62,6 +59,7 @@ export default function branches() {
             </SC.CardCommit>
           ))}
         </SC.ContainerCommits>
-    </SC.Main>
+      </SC.Main>
+    </SC.Container>
   )
 }

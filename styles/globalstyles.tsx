@@ -1,11 +1,11 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
   html,
   body {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
     padding: 0;
     margin: 0;
     font-family: 'Inter', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
