@@ -43,8 +43,9 @@ export default function Home() {
       </Head>
       <Toaster/>
       <SC.Main>
+        <SC.Title>Github API</SC.Title>
         <SC.ContainerInput>
-          <SC.Input type={'text'} placeholder='Search username' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={handleKeyPress} />
+          <SC.Input type={'text'} placeholder='Buscar usuário' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={handleKeyPress} />
           <SC.ButtonSearch type='button' onClick={getUser}>
             <HiOutlineSearch size={24} color='#fff' />
           </SC.ButtonSearch>

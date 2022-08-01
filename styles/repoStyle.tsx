@@ -55,11 +55,41 @@ export const Title = styled.p`
 export const ContainerBranches = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 24px;
   flex-wrap: wrap;
+`
+export const TitleSelect = styled.p`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.text};
+`
+export const Select = styled.select`
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  border: 2px solid ${({ theme }) => theme.colors.baseTertiary};
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  outline: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`
+export const SelectOption = styled.option`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.text};
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.baseTertiary};
+  }
 `
 export const BranchName = styled.p`
   position: relative;

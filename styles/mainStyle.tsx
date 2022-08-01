@@ -21,6 +21,12 @@ export const Main = styled.main`
   justify-content: flex-start;
   align-items: center;
 `
+export const Title = styled.h1`
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+`
 export const ContainerInput = styled.div`
   display: flex;
   flex-direction: row;
@@ -121,11 +127,17 @@ export const NumbersInfos = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 32px;
   flex-wrap: wrap;
+
+  @media (max-width: 650px) {
+      margin-top: 16px;
+    flex-direction: column;
+  }
 `
 export const TextNumbers = styled.p`
   margin: 0;
+  margin-bottom: 8px;
   font-size: 1rem;
   font-weight: 500;
   opacity: 0.7;

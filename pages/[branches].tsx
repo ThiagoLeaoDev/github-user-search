@@ -43,11 +43,15 @@ export default function branches() {
           </SC.BoxIconTitle>
         </SC.ContainerTitle>
         <SC.ContainerBranches>
-          {branches.map((branch, index) => (
-            <SC.BranchName key={index} onClick={() => getCommits(branch.name)}>
+          <SC.TitleSelect>Selecione uma branch</SC.TitleSelect>
+          <SC.Select onChange={(e) => getCommits(e.target.value)}>
+            <SC.SelectOption selected disabled>selecione...</SC.SelectOption>
+            {branches.map((branch, index) => (
+            <SC.SelectOption key={index}>
               {branch.name}
-            </SC.BranchName>
+            </SC.SelectOption>
           ))}
+          </SC.Select>
         </SC.ContainerBranches>
         <SC.ContainerCommits>
           {commits.map((commit, index) => (
