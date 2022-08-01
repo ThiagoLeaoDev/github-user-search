@@ -1,6 +1,10 @@
 # github-user-search
-
 Busque usuários do github, liste seus repositórios, suas branches e seus commits!
+
+<div align="center">
+  <img src="public/project-image.png">
+</div>
+
 ## Deploy
 
 Link do Deploy [Vercel](https://github-user-search-sigma.vercel.app) 
