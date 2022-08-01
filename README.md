@@ -12,7 +12,7 @@ Link do Deploy [Vercel](https://github-user-search-sigma.vercel.app)
 $ git clone https://github.com/ThiagoLeaoDev/github-user-search.git
 ```
 3. Utilize o comando `yarn install` dentro da raiz da pasta do projeto para a instalação das dependencias.
-4. Com o terminal na raíz do projeto, utilize `yarn start`. 
+4. Com o terminal na raíz do projeto, utilize `yarn dev`. 
 
 ## Contato
 
