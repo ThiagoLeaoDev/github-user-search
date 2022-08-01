@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 
+import { BsGithub } from 'react-icons/bs'
+
 export const Container = styled.div`
   padding: 0 0.5rem;
   display: flex;
@@ -20,6 +22,20 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+`
+export const ContainerTitle = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+`
+export const GithubIcon = styled(BsGithub)`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin-right: 1rem;
 `
 export const Title = styled.h1`
   margin-bottom: 1rem;

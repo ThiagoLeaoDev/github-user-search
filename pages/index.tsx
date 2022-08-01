@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
+import { BsGithub } from 'react-icons/bs'
 import { HiOutlineSearch, HiStar} from 'react-icons/hi'
 import toast, {Toaster} from "react-hot-toast"
 
@@ -43,7 +44,10 @@ export default function Home() {
       </Head>
       <Toaster/>
       <SC.Main>
-        <SC.Title>Github API</SC.Title>
+        <SC.ContainerTitle>
+          <SC.GithubIcon />
+          <SC.Title>Github API</SC.Title>
+        </SC.ContainerTitle>
         <SC.ContainerInput>
           <SC.Input type={'text'} placeholder='Buscar usuário' value={search} onChange={e => setSearch(e.target.value)} onKeyPress={handleKeyPress} />
           <SC.ButtonSearch type='button' onClick={getUser}>
